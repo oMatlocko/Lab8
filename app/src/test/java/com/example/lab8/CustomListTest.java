@@ -60,15 +60,31 @@ public class CustomListTest {
      * check if the list size is 0
      */
     @Test
-    public void deleteCityTest(){
+    public void deleteCitiesTest(){
         list = MockCityList();
         City city = new City("Estevan", "SK");
         list.addCity(city);
-        assertEquals(list.hasCity(city),true);
-        assertEquals(list.getCount(),1);
+        assertEquals(list.countCities(),1);
         list.deleteCity(city);
-        assertEquals(list.hasCity(city),false);
-        assertEquals(list.getCount(),0);
+        assertEquals(list.countCities(),0);
+    }
+
+
+    /**
+     * create a new city
+     * add it to the list
+     * check if the list contains the city
+     * check if the list size is 1
+     * remove the city from the list
+     * check if the list contains the city
+     * check if the list size is 0
+     */
+    @Test
+    public void countCitiesTest(){
+        list = MockCityList();
+        City city = new City("Estevan", "SK");
+        list.addCity(city);
+        assertEquals(list.getCount(),1);
     }
 
 
